@@ -2,7 +2,7 @@
   <ul class="games-list">
     {{#each model as |game|}}
     <li>
-      <h2 class="games-list__heading">{{game}}</h2>
+      <h2 class="games-list__heading">{{game.attributes.name}}</h2>
     </li>
     {{/each}}
   </ul>
