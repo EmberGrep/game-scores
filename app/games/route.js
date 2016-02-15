@@ -25,7 +25,11 @@ export default Ember.Route.extend({
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(body),
-      });
+      })
+        .then((response) => response.json())
+        .then((response) => {
+          this.controller.addNewGame(response.data);
+        });
 
       ev.preventDefault();
     }
