@@ -5,5 +5,29 @@ export default Ember.Route.extend({
     return fetch('https://game-scores.herokuapp.com/games')
       .then((response) => response.json())
       .then((response) => response.data);
+  },
+
+  actions: {
+    saveNewGame(name, ev) {
+      const body = {
+        data: {
+          type: 'games',
+          attributes: {
+            name
+          }
+        }
+      };
+
+      fetch('https://game-scores.herokuapp.com/games', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      });
+
+      ev.preventDefault();
+    }
   }
 });

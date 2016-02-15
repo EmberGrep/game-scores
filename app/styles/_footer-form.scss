@@ -1,0 +1,33 @@
+.footer-form {
+  background: $brand-white;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-form__label {
+  display: none;
+}
+
+.footer-form__input {
+  background: none;
+  border: none;
+
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  padding: 0 0 0.2rem;
+  margin: 1rem 1rem 0.8rem;
+
+  border-bottom: 2px solid $brand-secondary;
+
+  &:focus {
+    border-bottom-color: $brand-pop;
+  }
+}
+
+.footer-bar__button--save {
+  background: $brand-secondary;
+
+  &:focus {
+    background: $brand-pop;
+  }
+}
