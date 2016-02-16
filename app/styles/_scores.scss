@@ -1,0 +1,35 @@
+.game-scores {
+  display: table;
+
+  padding: 0;
+  margin: 0;
+
+  font-size: 1.2rem;
+
+  counter-reset: game-scores;
+}
+
+.game-scores__item {
+  display: table-row;
+
+  counter-increment: game-scores;
+
+  &::before {
+    display: table-cell;
+    content: counter(game-scores) '.';
+  }
+}
+
+.game-scores__username, .game-scores__score {
+  display: table-cell;
+
+  padding: 0 0.2rem;
+}
+
+.game-scores__username {
+  font-weight: 700;
+}
+
+.game-scores__score {
+  text-align: right;
+}
