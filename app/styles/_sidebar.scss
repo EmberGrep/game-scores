@@ -22,3 +22,12 @@
 .games-list__heading {
   margin: 0.5rem;
 }
+
+.games-list__link {
+  color: inherit;
+  text-decoration: none;
+
+  &.active {
+    color: $brand-pop;
+  }
+}
