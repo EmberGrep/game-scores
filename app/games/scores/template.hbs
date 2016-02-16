@@ -1,0 +1,9 @@
+<h2>Scores for {{model.game.attributes.name}}</h2>
+
+<p>There are {{model.scores.length}} scores for this game.</p>
+
+<ul class="game-scores">
+  {{#each model.scores as |score|}}
+    <li class="game-scores__item">{{score.attributes.username}}</li>
+  {{/each}}
+</ul>

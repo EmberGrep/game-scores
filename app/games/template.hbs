@@ -2,7 +2,11 @@
   <ul class="games-list">
     {{#each model as |game|}}
     <li>
-      <h2 class="games-list__heading">{{game.attributes.name}}</h2>
+      <h2 class="games-list__heading">
+        {{#link-to 'games.scores' game.id class="games-list__link"}}
+          {{game.attributes.name}}
+        {{/link-to}}
+      </h2>
     </li>
     {{/each}}
   </ul>
