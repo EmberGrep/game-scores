@@ -1,1 +1,12 @@
-<h2>Scores for {{model.attributes.name}}</h2>
+<h2>Scores for {{model.game.attributes.name}}</h2>
+
+<p>There are {{model.scores.length}} scores for this game.</p>
+
+<ol class="game-scores">
+  {{#each model.scores as |score|}}
+    <li class="game-scores__item">
+      <span class="game-scores__username">{{score.attributes.username}}</span>
+      <span class="game-scores__score">{{score.attributes.score}}</span>
+    </li>
+  {{/each}}
+</ol>
