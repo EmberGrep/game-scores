@@ -10,15 +10,14 @@
     </li>
     {{/each}}
   </ul>
-  <footer class="footer-bar">
-    <button class="footer-bar__button">Add Game</button>
-    <form onsubmit={{route-action 'saveNewGame' newGameName}} class="footer-form">
+  {{#footer-bar as |toggleExpand|}}
+    {{#simple-form onsubmit=(route-action 'saveNewGame' toggleExpand) class="footer-form" as |newGame|}}
       <label class="footer-form__label">Name</label>
-      {{input type="text" class="footer-form__input" placeholder="Name" value=newGameName}}
+      {{input type="text" class="footer-form__input" placeholder="Name" value=newGame.name}}
 
       <button class="footer-bar__button footer-bar__button--save">Save</button>
-    </form>
-  </footer>
+    {{/simple-form}}
+  {{/footer-bar}}
 </div>
 <div class="detail">
   {{outlet}}
