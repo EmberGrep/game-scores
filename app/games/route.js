@@ -6,11 +6,12 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    saveNewGame(name, ev) {
+    saveNewGame(name, toggleForm, ev) {
       const game = this.store.createRecord('game', { name });
 
       game.save()
         .then(() => {
+          toggleForm();
           this.controller.resetForm();
         });
 
