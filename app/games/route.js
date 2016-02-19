@@ -6,16 +6,19 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    saveNewGame(name, toggleForm, ev) {
-      const game = this.store.createRecord('game', { name });
+    saveNewGame(toggleForm, formValues) {
+      const game = this.store.createRecord('game', formValues);
 
       game.save()
         .then(() => {
           toggleForm();
-          this.controller.resetForm();
         });
+    },
 
-      ev.preventDefault();
+    deleteGame(game) {
+      if (window.confirm('Do you really want to delete this game?')) {
+        game.destroyRecord();
+      }
     }
   }
 });

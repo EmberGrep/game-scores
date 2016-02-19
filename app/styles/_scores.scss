@@ -33,3 +33,17 @@
 .game-scores__score {
   text-align: right;
 }
+
+.game-scores__remove {
+  display: table-cell;
+  background: none;
+  outline: none;
+  border: 0;
+  color: inherit;
+
+  opacity: 0.4;
+
+  &:hover {
+    opacity: 1;
+  }
+}
