@@ -1,5 +1,9 @@
 {{#if isExpanded}}
-  {{yield (action (toggle this 'isExpanded'))}}
+  {{#simple-form class="footer-form" onsubmit=(action onsubmit (action (toggle this 'isExpanded'))) as |formValues resetForm|}}
+    {{yield formValues}}
+
+    <button class="footer-bar__button footer-bar__button--save">Save</button>
+  {{/simple-form}}
 {{else}}
   <button class="footer-bar__button" onclick={{action (toggle this 'isExpanded')}}>{{btnText}}</button>
 {{/if}}
