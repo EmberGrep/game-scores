@@ -1,0 +1,5 @@
+{{#if isExpanded}}
+  {{yield (action (toggle this "isExpanded"))}}
+{{else}}
+  <button class="footer-bar__button" onclick={{action (toggle this "isExpanded")}}>Add Game</button>
+{{/if}}
