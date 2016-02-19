@@ -1,12 +1,22 @@
-<h2>Scores for {{model.name}}</h2>
+<section class="detail-content">
+  <h2>Scores for {{model.name}}</h2>
 
-<p>There are {{model.scores.length}} scores for this game.</p>
+  <p>There are {{model.scores.length}} scores for this game.</p>
 
-<ol class="game-scores">
-  {{#each model.scores as |score|}}
-    <li class="game-scores__item">
-      <span class="game-scores__username">{{score.username}}</span>
-      <span class="game-scores__score">{{score.score}}</span>
-    </li>
-  {{/each}}
-</ol>
+  <ol class="game-scores">
+    {{#each model.scores as |score|}}
+      <li class="game-scores__item">
+        <span class="game-scores__username">{{score.username}}</span>
+        <span class="game-scores__score">{{score.score}}</span>
+      </li>
+    {{/each}}
+  </ol>
+</section>
+
+{{#footer-bar onsubmit=(route-action 'saveNewScore' model) btnText="Add Score" as |newScore|}}
+  <label class="footer-form__label">Username</label>
+  {{input type="text" class="footer-form__input" placeholder="Username" value=newScore.username}}
+
+  <label class="footer-form__label">Score</label>
+  {{input type="text" class="footer-form__input" placeholder="Score" value=newScore.score}}
+{{/footer-bar}}
