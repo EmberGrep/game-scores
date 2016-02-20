@@ -42,6 +42,7 @@
     "ember-route-action-helper": "0.3.0",
     "ember-simple-form": "1.0.1",
     "ember-toggle-helper": "0.1.1",
+    "ember-truth-helpers": "1.2.0",
     "loader.js": "^4.0.0"
   }
 }

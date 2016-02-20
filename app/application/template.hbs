@@ -9,4 +9,15 @@
   <div class="app-main">
     {{outlet}}
   </div>
+
+  {{#promise-dialog dialogType="confirm" as |resolve reject alert|}}
+    <div class="alert-overlay">
+      <div class="alert-box">
+        {{alert.options.message}}
+
+        <button onclick={{action reject}}>Cancel</button>
+        <button onclick={{action resolve}}>Ok</button>
+      </div>
+    </div>
+  {{/promise-dialog}}
 </div>
