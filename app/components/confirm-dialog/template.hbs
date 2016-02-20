@@ -1,0 +1,10 @@
+<div class="dialog-overlay {{if confirm.message "dialog-overlay--active"}}">
+  <div class="dialog-content">
+    <p class="dialog-content__message">{{confirm.message}}</p>
+
+    <div class="dialog-content__actions">
+      <button onclick={{action "reject"}} class="dialog-content__button dialog-content__button--cancel">Cancel</button>
+      <button onclick={{action "resolve"}} class="dialog-content__button dialog-content__button--confirm">Ok</button>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  confirm: Ember.inject.service('confirm'),
+
   model() {
     return this.store.findAll('game');
   },
@@ -16,9 +18,9 @@ export default Ember.Route.extend({
     },
 
     deleteGame(game) {
-      if (window.confirm('Do you really want to delete this game?')) {
-        game.destroyRecord();
-      }
+      this.get('confirm').create('Do you really want to delete this game?')
+        .then(() => game.destroyRecord())
+        .catch(() => {});
     }
   }
 });
