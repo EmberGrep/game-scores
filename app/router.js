@@ -16,9 +16,8 @@ Router.map(function() {
     this.route('edit', {
       path: '/:game_id/edit'
     });
-    this.route('scores-error');
   });
-  this.route('games.scores-error');
+  this.route('l');
 });
 
 export default Router;
