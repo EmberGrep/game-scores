@@ -1,0 +1,20 @@
+<div class="dialog-overlay dialog-overlay--active">
+  <div class="dialog-content">
+    {{#simple-form startingValues=model onsubmit=(route-action 'updateScore' model) class="dialog-content__message edit-form" as |formValues|}}
+      <h2>Editing {{model.username}}'s Score</h2>
+
+      <label>Username</label>
+      {{input class="edit-form__input" placeholder="Username" value=formValues.username}}
+
+      <label>Score</label>
+      {{input class="edit-form__input" placeholder="Score" value=formValues.score}}
+
+      <div class="edit-form__actions">
+        {{#link-to 'games.scores' model.game class="edit-form__button edit-form__button--cancel"}}
+          Back
+        {{/link-to}}
+        <button class="edit-form__button edit-form__button--submit">Save</button>
+      </div>
+    {{/simple-form}}
+  </div>
+</div>

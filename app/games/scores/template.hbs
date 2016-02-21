@@ -8,6 +8,7 @@
       <li class="game-scores__item">
         <span class="game-scores__username">{{score.username}}</span>
         <span class="game-scores__score">{{score.score}}</span>
+        {{#link-to "games.scores.edit" score class="game-scores__edit"}}<span class="fa fa-edit"></span>{{/link-to}}
         <button class="game-scores__remove" onclick={{route-action 'deleteScore' score}}>
           <span class="fa fa-remove"></span>
         </button>

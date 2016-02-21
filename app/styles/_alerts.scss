@@ -1,0 +1,11 @@
+.alerts {
+  position: fixed;
+  top: 5rem;
+  right: 1rem;
+}
+
+.alert {
+  background: lighten($brand-black, 10%);
+  color: $brand-white;
+  padding: 1rem;
+}
