@@ -28,6 +28,12 @@ export default Ember.Route.extend({
           this.get('flashMessages').success(`Game "${name}" deleted.`);
         })
         .catch(() => {});
+    },
+
+    error() {
+      this.get('flashMessages').success('There was an error loading this game.');
+
+      this.transitionTo('games.index');
     }
   }
 });

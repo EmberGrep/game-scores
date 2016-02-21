@@ -9,6 +9,12 @@ export default Ember.Route.extend({
         this.get('flashMessages').success(`${score.get('username')}'s score updated.`);
         this.transitionTo('games.scores', score.get('game'));
       });
+    },
+
+    error() {
+      this.get('flashMessages').success('There was an error loading this score.');
+
+      this.transitionTo('games.scores');
     }
   }
 });
